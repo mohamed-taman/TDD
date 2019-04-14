@@ -66,4 +66,9 @@ class RomanConverterTest {
     void convertIV() {
         assertEquals(4, convertRomanToArabicNumber("IV"), "Roman IV should equal to 4");
     }
+
+    @Test
+    void convertX() {
+        assertEquals(10, convertRomanToArabicNumber("X"), "Roman X should equal to 10");
+    }
 }
