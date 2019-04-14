@@ -53,33 +53,53 @@ final class RomanConverter {
         }
     };
 
+    private RomanConverter() {
+    }
+
     /**
      * Method that takes a roman character(s), and returns equivalent Arabic number.
      *
      * @param roman character
      * @return equivalent Arabic representation.
      */
-    int convertRomanToArabicNumber(String roman) {
-        var sum = 0;
-        var current = 0;
-        var previous = 0;
+    static int convertRomanToArabicNumber(String roman) {
 
-        for (int index = 0; index < roman.length(); index++) {
-            if (romanSymbols.containsKey(roman.charAt(index))) {
-                current = romanSymbols.get(roman.charAt(index));
-                previous = index == 0 ? 0 : romanSymbols.get(roman.charAt(index - 1));
-                if (previous >= current) {
-                    sum += current;
+        roman = roman.toUpperCase();
+
+        int sum = 0;
+        int current = 0;
+        int previous = 0;
+
+        for (int index = roman.length() - 1; index >= 0; index--) {
+            if (doesSymbolsContainsRomanCharacter(roman, index)) {
+
+                current = getSymbolValue(roman, index);
+
+                if (current < previous) {
+                    sum -= current;
                 } else {
-                    sum -= previous;
-                    sum += (current - previous);
+                    sum += current;
                 }
+
+                previous = current;
+
             } else {
                 throw new IllegalArgumentException(
                         String.format("Invalid roman character %s ", getCharValue(roman, index)));
             }
-            previous = current;
         }
         return sum;
-  }
+    }
+
+    private static boolean doesSymbolsContainsRomanCharacter(String roman, int index) {
+        return romanSymbols.containsKey(getCharValue(roman, index));
+    }
+
+    private static Integer getSymbolValue(String roman, int index) {
+        return romanSymbols.get(getCharValue(roman, index));
+    }
+
+    private static char getCharValue(String roman, int index) {
+        return roman.charAt(index);
+    }
 }
