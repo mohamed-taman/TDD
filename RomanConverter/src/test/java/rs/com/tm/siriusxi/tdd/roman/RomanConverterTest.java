@@ -27,6 +27,7 @@ package rs.com.tm.siriusxi.tdd.roman;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static rs.com.tm.siriusxi.tdd.roman.RomanConverter.convertRomanToArabicNumber;
 
 /**
@@ -102,5 +103,13 @@ class RomanConverterTest {
         assertEquals(1996, convertRomanToArabicNumber("MCMXCVI"),
                 "Roman MCMXCVI should equal to " +
                         "1996");
+    }
+
+    @Test
+    void convertInvalidRomanValue() {
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> convertRomanToArabicNumber("Z"),
+                "Invalid roman character Z Should throw (IllegalArgumentException)");
     }
 }
