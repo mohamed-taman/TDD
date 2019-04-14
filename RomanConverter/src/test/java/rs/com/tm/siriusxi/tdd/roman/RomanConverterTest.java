@@ -49,4 +49,11 @@ class RomanConverterTest {
                 2, new RomanConverter().convertRomanToArabicNumber("II"),
                 "Roman II should equal to 2");
     }
+
+    @Test
+    void convertIII() {
+        assertEquals(
+                3, new RomanConverter().convertRomanToArabicNumber("III"),
+                "Roman III should equal to 3");
+    }
 }
