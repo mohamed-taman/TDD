@@ -112,4 +112,10 @@ class RomanConverterTest {
                 () -> convertRomanToArabicNumber("Z"),
                 "Invalid roman character Z Should throw (IllegalArgumentException)");
     }
+
+    @Test
+    void convertVII() {
+        assertEquals(7, convertRomanToArabicNumber("vii"),
+                "Roman VII should equal to 7");
+    }
 }
