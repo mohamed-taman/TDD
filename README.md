@@ -5,7 +5,9 @@ Everything about testing, especially TDD, Test-Driven Development: Really, It’
 
 ## Roman Converter project (with TDD)
 **Related Article**: This project is the first TDD kata and is explained at the following **InfoQ** article [Test-Driven Development: Really, It’s a Design Technique.](http://www.article.com)
-
+```bash 
+mohamed_taman:RomanConverter$ mvn package
+```
 ## Any issues
 If you have any issue, enhancement, or improvement please open an issue with appropriate label, at the following [TDD Issue tracker](https://github.com/mohamed-taman/TDD/issues).
 
