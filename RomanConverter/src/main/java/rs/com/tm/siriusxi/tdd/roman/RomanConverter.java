@@ -24,6 +24,7 @@
 
 package rs.com.tm.siriusxi.tdd.roman;
 
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -38,9 +39,19 @@ final class RomanConverter {
      * romanSymbols is a holder for each roman character as a key, and equivalent Arabic number as
      * value.
      */
-    private static Map<Character, Integer> romanSymbols =
-            Map.of('I', 1, 'V', 5, 'X', 10, 'L', 50, 'C', 100,
-                    'D', 500, 'M', 1000);
+    private static final Map<Character, Integer> romanSymbols = new HashMap<Character, Integer>() {
+        private static final long serialVersionUID = 1L;
+
+        {
+            put('I', 1);
+            put('V', 5);
+            put('X', 10);
+            put('L', 50);
+            put('C', 100);
+            put('D', 500);
+            put('M', 1000);
+        }
+    };
 
     /**
      * Method that takes a roman character(s), and returns equivalent Arabic number.

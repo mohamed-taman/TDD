@@ -30,7 +30,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>rs.com.tm.siriusxi</groupId>
     <artifactId>RomanConverter</artifactId>
-    <version>1.0-SNAPSHOT-${maven.build.timestamp}</version>
+    <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>Roman Converter Application</name>
@@ -182,12 +182,11 @@
                 <artifactId>findbugs-maven-plugin</artifactId>
                 <version>3.0.5</version>
                 <configuration>
-                    <onlyAnalyze>rs.com.tm.siriusxi.*</onlyAnalyze>
+                    <onlyAnalyze>rs.com.tm.siriusxi.tdd.roman.*</onlyAnalyze>
 
                     <!-- Enables analysis which takes more memory but finds more bugs.
                     If you run out of memory, changes the value of the effort element
                     to 'Low'.-->
-
                     <effort>Max</effort>
                     <!--Reports all bugs (other values are medium and max)-->
                     <threshold>low</threshold>
@@ -258,7 +257,7 @@
                     <!-- Optional: points to this location by default -->
                     <analysisCacheLocation>${project.build.directory}/pmd/pmd.cache
                     </analysisCacheLocation>
-                    <targetJdk>12</targetJdk>
+                    <targetJdk>1.8</targetJdk>
                 </configuration>
                 <executions>
                     <execution>
@@ -281,7 +280,7 @@
                 <artifactId>findbugs-maven-plugin</artifactId>
                 <version>3.0.5</version>
                 <configuration>
-                    <onlyAnalyze>rs.co.wc.gplm.app.*</onlyAnalyze>
+                    <onlyAnalyze>rs.com.tm.siriusxi.tdd.roman.*</onlyAnalyze>
                     <xmlOutput>true</xmlOutput>
                     <!-- Optional directory to put findbugs xdoc xml report -->
                     <xmlOutputDirectory>target/site</xmlOutputDirectory>
@@ -311,8 +310,8 @@
     </reporting>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>12</maven.compiler.source>
-        <maven.compiler.target>12</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
         <!--
             This should be enabled in production or configure command line to
             run mvn as the following "mvn install -DskipTests=false"
