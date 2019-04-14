@@ -39,6 +39,12 @@ class RomanConverter {
      * @return equivalent Arabic representation.
      */
     int convertRomanToArabicNumber(String roman) {
-        return 1;
+
+        if ("I".equals(roman)) {
+            return 1;
+        } else if ("II".equals(roman)) {
+            return 2;
+        }
+        throw new IllegalArgumentException();
     }
 }
