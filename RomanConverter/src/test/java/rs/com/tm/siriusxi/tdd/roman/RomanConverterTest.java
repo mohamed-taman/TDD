@@ -81,4 +81,9 @@ class RomanConverterTest {
     void convertXXXVI() {
         assertEquals(36, convertRomanToArabicNumber("XXXVI"), "Roman XXXVI should equal to 36");
     }
+
+    @Test
+    void convertMMXII() {
+        assertEquals(2012, convertRomanToArabicNumber("MMXII"), "Roman MMXII should equal to 2012");
+    }
 }
