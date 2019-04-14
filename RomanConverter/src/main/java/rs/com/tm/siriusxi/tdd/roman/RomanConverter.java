@@ -35,11 +35,12 @@ import java.util.Map;
 class RomanConverter {
 
     /**
-     * romanSymbols is a holder for each roman character as a key,
-     * and equivalent Arabic number as value.
+     * romanSymbols is a holder for each roman character as a key, and equivalent Arabic number as
+     * value.
      */
-    private Map<Character, Integer> romanSymbols = Map.of('I', 1, 'V', 5, 'X', 10,
-            'L', 50, 'C', 100, 'D', 500, 'M', 1000);
+    private Map<Character, Integer> romanSymbols =
+            Map.of('I', 1, 'V', 5, 'X', 10, 'L', 50, 'C', 100, 'D', 500, 'M', 1000);
+
     /**
      * Method that takes a roman character(s), and returns equivalent Arabic number.
      *
@@ -48,12 +49,22 @@ class RomanConverter {
      */
     int convertRomanToArabicNumber(String roman) {
         var sum = 0;
-        for (char ch : roman.toCharArray()) {
-            if (romanSymbols.containsKey(ch)) {
-                sum += romanSymbols.get(ch);
-            } else {
+        var current = 0;
+        var previous = 0;
 
-                throw new IllegalArgumentException(String.format("Illegal roman character %s", ch));
+        for (int index = 0; index < roman.length(); index++) {
+            if (romanSymbols.containsKey(roman.charAt(index))) {
+                current = romanSymbols.get(roman.charAt(index));
+                previous = index == 0 ? 0 : romanSymbols.get(roman.charAt(index - 1));
+                if (previous >= current) {
+                    sum += current;
+                } else {
+                    sum -= previous;
+                    sum += (current - previous);
+                }
+            } else {
+                throw new IllegalArgumentException(
+                        String.format("Invalid roman character %s ", roman.charAt(index)));
             }
         }
         return sum;

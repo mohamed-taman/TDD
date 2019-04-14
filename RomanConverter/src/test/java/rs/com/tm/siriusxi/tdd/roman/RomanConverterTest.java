@@ -70,4 +70,11 @@ class RomanConverterTest {
                 6, new RomanConverter().convertRomanToArabicNumber("VI"),
                 "Roman VI should equal to 6");
     }
+
+    @Test
+    void convertIV() {
+        assertEquals(
+                4, new RomanConverter().convertRomanToArabicNumber("IV"),
+                "Roman IV should equal to 4");
+    }
 }
