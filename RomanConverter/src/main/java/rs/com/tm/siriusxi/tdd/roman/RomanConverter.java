@@ -67,6 +67,7 @@ class RomanConverter {
                 throw new IllegalArgumentException(
                         String.format("Invalid roman character %s ", getCharValue(roman, index)));
             }
+            previous = current;
         }
         return sum;
   }
