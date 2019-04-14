@@ -47,6 +47,6 @@ class RomanConverter {
         throw new IllegalArgumentException();
             }
         }
-        return 0;
+        return sum;
   }
 }
