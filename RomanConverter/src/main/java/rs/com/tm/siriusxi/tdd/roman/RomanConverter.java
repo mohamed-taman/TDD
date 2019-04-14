@@ -24,18 +24,21 @@
 
 package rs.com.tm.siriusxi.tdd.roman;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
-
 /**
- * Test class, to validate the working mechanism of Roman converter class.
+ * Class represents a roman converter to Arabic numbers.
+ *
+ * @author mohamed_taman
+ * @since 1.0
  */
-class RomanConverterTest {
+class RomanConverter {
 
-    @Test
-    void convertI() {
-        Assertions.assertEquals(
-                1, new RomanConverter().convertRomanToArabicNumber("I"),
-                "Roman I should equal to 1");
+    /**
+     * Method that takes a roman character(s), and returns equivalent Arabic number.
+     *
+     * @param roman character
+     * @return equivalent Arabic representation.
+     */
+    int convertRomanToArabicNumber(String roman) {
+        return 0;
     }
 }
