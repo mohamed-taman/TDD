@@ -39,7 +39,8 @@ class RomanConverter {
      * value.
      */
     private Map<Character, Integer> romanSymbols =
-            Map.of('I', 1, 'V', 5, 'X', 10, 'L', 50, 'C', 100, 'D', 500, 'M', 1000);
+            Map.of('I', 1, 'V', 5, 'X', 10, 'L', 50, 'C', 100,
+                    'D', 500, 'M', 1000);
 
     /**
      * Method that takes a roman character(s), and returns equivalent Arabic number.
