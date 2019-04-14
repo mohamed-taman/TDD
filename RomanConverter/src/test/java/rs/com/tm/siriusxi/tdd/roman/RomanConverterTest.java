@@ -56,4 +56,11 @@ class RomanConverterTest {
                 3, new RomanConverter().convertRomanToArabicNumber("III"),
                 "Roman III should equal to 3");
     }
+
+    @Test
+    void convertV() {
+        assertEquals(
+                5, new RomanConverter().convertRomanToArabicNumber("V"),
+                "Roman V should equal to 5");
+    }
 }

@@ -43,6 +43,8 @@ class RomanConverter {
         for (char ch : roman.toCharArray()) {
             if (ch == 'I') {
                 sum += 1;
+            } else if (ch == 'V') {
+                sum += 5;
             } else {
                 throw new IllegalArgumentException(String.format("Illegal roman character %s", ch));
             }
