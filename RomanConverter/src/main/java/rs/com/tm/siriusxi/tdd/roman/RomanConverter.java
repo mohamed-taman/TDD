@@ -44,7 +44,7 @@ class RomanConverter {
             if (ch == 'I') {
                 sum += 1;
             } else {
-        throw new IllegalArgumentException();
+                throw new IllegalArgumentException(String.format("Illegal roman character %s", ch));
             }
         }
         return sum;
