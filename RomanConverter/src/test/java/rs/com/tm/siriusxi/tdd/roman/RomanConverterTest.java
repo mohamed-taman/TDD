@@ -33,7 +33,6 @@ public class RomanConverterTest {
     public void convertI() {
         Assertions.assertEquals(1,
                 new RomanConverter().convertRomanToArabicNumber("I"),
-                "Roman I" +
-                        " should equal to 1");
+                "Roman I should equal to 1");
     }
 }
