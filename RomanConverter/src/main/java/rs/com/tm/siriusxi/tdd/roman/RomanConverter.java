@@ -24,6 +24,8 @@
 
 package rs.com.tm.siriusxi.tdd.roman;
 
+import java.util.Map;
+
 /**
  * Class represents a roman converter to Arabic numbers.
  *
@@ -33,6 +35,12 @@ package rs.com.tm.siriusxi.tdd.roman;
 class RomanConverter {
 
     /**
+     * romanSymbols is a holder for each roman character as a key,
+     * and equivalent Arabic number as value.
+     */
+    private Map<Character, Integer> romanSymbols = Map.of('I', 1, 'V', 5, 'X', 10,
+            'L', 50, 'C', 100, 'D', 500, 'M', 1000);
+    /**
      * Method that takes a roman character(s), and returns equivalent Arabic number.
      *
      * @param roman character
@@ -41,11 +49,10 @@ class RomanConverter {
     int convertRomanToArabicNumber(String roman) {
         var sum = 0;
         for (char ch : roman.toCharArray()) {
-            if (ch == 'I') {
-                sum += 1;
-            } else if (ch == 'V') {
-                sum += 5;
+            if (romanSymbols.containsKey(ch)) {
+                sum += romanSymbols.get(ch);
             } else {
+
                 throw new IllegalArgumentException(String.format("Illegal roman character %s", ch));
             }
         }
