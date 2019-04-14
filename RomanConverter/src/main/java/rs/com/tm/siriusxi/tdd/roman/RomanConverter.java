@@ -32,13 +32,13 @@ import java.util.Map;
  * @author mohamed_taman
  * @since 1.0
  */
-class RomanConverter {
+final class RomanConverter {
 
     /**
      * romanSymbols is a holder for each roman character as a key, and equivalent Arabic number as
      * value.
      */
-    private Map<Character, Integer> romanSymbols =
+    private static Map<Character, Integer> romanSymbols =
             Map.of('I', 1, 'V', 5, 'X', 10, 'L', 50, 'C', 100,
                     'D', 500, 'M', 1000);
 
