@@ -39,6 +39,6 @@ class RomanConverter {
      * @return equivalent Arabic representation.
      */
     int convertRomanToArabicNumber(String roman) {
-        return 0;
+        return 1;
     }
 }
