@@ -65,7 +65,7 @@ class RomanConverter {
                 }
             } else {
                 throw new IllegalArgumentException(
-                        String.format("Invalid roman character %s ", roman.charAt(index)));
+                        String.format("Invalid roman character %s ", getCharValue(roman, index)));
             }
         }
         return sum;
