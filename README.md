@@ -1,3 +1,4 @@
+[![Twitter Follow](https://img.shields.io/twitter/follow/_tamanm?label=follow%20me&style=social)](https://twitter.com/_tamanm)
 # Testing with a TDD in mind
 Everything about testing in general, especially TDD, Test-Driven Development: Really, It’s a Design Technique. Try to cover all testing concepts but with Test-Driven Development technique in mind.
 
